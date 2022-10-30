@@ -2,8 +2,8 @@ from pprint import pprint
 
 
 def cook_book_maker():  # При вызове считывает данные из файла и формирует книгу рецептов
-    with open('cookbook.txt','r') as book:
-        
+    with open('cookbook.txt', 'r') as book:
+
         cook_book = {}
 
         while True:
@@ -48,8 +48,8 @@ def file_uniter(filenames_list):  # Результат выполнения фу
     files = []
 
     for filename in filenames_list:
-        with open(filename,'r') as file:
-        
+        with open(filename, 'r') as file:
+
             content = file.read()
             strcount = content.count('\n') + 1
             files.append({
@@ -59,7 +59,7 @@ def file_uniter(filenames_list):  # Результат выполнения фу
             })
 
     files = sorted(files, key=lambda file: file['strcount'])
-    with open('result.txt','w') as result:
+    with open('result.txt', 'w') as result:
         for file in files:
             result.write(file['name'] + '\n')
             result.write(str(file['strcount']) + '\n')
